@@ -12,8 +12,8 @@ WORKDIR /app
 RUN mvn clean package
 
 # Use the official OpenJDK 17 as base image for the application
-#FROM --platform=linux/arm64 eclipse-temurin:17.0.5_8-jre-alpine
-FROM --platform=linux/amd64 openjdk:17-alpine
+#FROM --platform=linux/amd64 openjdk:17-alpine
+FROM openjdk:17-alpine
 
 
 # Set the working directory inside the container
@@ -29,4 +29,4 @@ COPY budgets-db.sqlite /app/budgets-db.sqlite
 EXPOSE 8080
 
 # Run the Spring Boot application when the container starts
-CMD ["java", "-jar", "/app/your-spring-boot-app.jar"]
+CMD ["java", "-jar", "/app/caixinha-backend-0.0.1-SNAPSHOT.jar"]
